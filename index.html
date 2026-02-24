@@ -860,16 +860,16 @@
         <!-- Quick Actions -->
         <div class="quick-actions no-select">
             <button class="quick-action-btn" onclick="quickAction('service')">
-                <span>➕</span> ဝန်ဆောင်မှု
+                <span>➕</span> ဖုန်းပြုပြင်
             </button>
             <button class="quick-action-btn" onclick="quickAction('income')">
-                <span>💰</span> အခြားရ
+                <span>💰</span> အခြားဝင်ငွေ
             </button>
             <button class="quick-action-btn" onclick="quickAction('expense')">
                 <span>📉</span> အသုံး
             </button>
             <button class="quick-action-btn" onclick="quickAction('report')">
-                <span>📊</span> အစီရင်ခံ
+                <span>📊</span> စာရင်းချုပ်
             </button>
         </div>
 
@@ -879,12 +879,12 @@
         <!-- Services Tab -->
         <div id="services-tab" class="tab-content active">
             <h2 class="section-title">
-                <span>🛠️</span> ဝန်ဆောင်မှုများ
+                <span>🛠️</span> ဖုန်းပြုပြင်ခြင်းများ
             </h2>
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-label">ယနေ့ ဝန်ဆောင်မှု</div>
+                    <div class="stat-label">ယနေ့ ပြုပြင်မှု</div>
                     <div class="stat-number" id="todayServices">0</div>
                 </div>
                 <div class="stat-card">
@@ -896,28 +896,28 @@
                     <div class="stat-number profit" id="todayServiceProfit">0 ကျပ်</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">ဆိုင်းငံ့ဆဲ</div>
+                    <div class="stat-label">ဆိုင်းငံ့နေဆဲ</div>
                     <div class="stat-number" id="pendingServices">0</div>
                 </div>
             </div>
 
             <!-- Service Form -->
             <div class="form-section">
-                <h3>➕ ဝန်ဆောင်မှုအသစ်</h3>
+                <h3>➕ ဖုန်းပြုပြင်စာရင်းအသစ်</h3>
                 <form id="serviceForm">
                     <div class="form-group">
-                        <label>ဝန်ဆောင်မှုအမည်</label>
+                        <label>ပြုပြင်ခြင်းအမည်</label>
                         <select id="serviceType" required>
                             <option value="">ရွေးပါ...</option>
                             <option value="ဖုန်းပြုပြင်ခြင်း">📱 ဖုန်းပြုပြင်ခြင်း</option>
-                            <option value="ဖန်သားပြင်လဲလှယ်ခြင်း">🖥️ ဖန်သားပြင်လဲလှယ်</option>
-                            <option value="ဘက်ထရီလဲလှယ်ခြင်း">🔋 ဘက်ထရီလဲလှယ်</option>
+                            <option value="Touch&LCD လဲခြင်း">Touch&LCD လဲခြင်း</option>
+                            <option value="Battery">🔋 Battery</option>
                             <option value="ဆော့ဝဲထည့်သွင်းခြင်း">📲 ဆော့ဝဲထည့်</option>
                             <option value="အခြား">🔄 အခြား</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>ဖောက်သည်အမည်</label>
+                        <label>ပြုပြင်သူအမည်</label>
                         <input type="text" id="serviceCustomer" placeholder="ဥပမာ - ဦးအောင်" required>
                     </div>
                     <div class="form-group">
@@ -960,7 +960,7 @@
                         <label>အခြေအနေ</label>
                         <select id="serviceStatus">
                             <option value="pending">⏳ ဆိုင်းငံ့ဆဲ</option>
-                            <option value="in-progress">🔄 လုပ်ဆောင်နေဆဲ</option>
+                            <option value="in-progress">🔄 ပြုပြင်နေဆဲ</option>
                             <option value="completed">✅ ပြီးစီး</option>
                         </select>
                     </div>
@@ -976,7 +976,7 @@
 
             <!-- Service List -->
             <div class="form-section">
-                <h3>📋 ယနေ့ ဝန်ဆောင်မှုစာရင်း</h3>
+                <h3>📋 ယနေ့ Phone Services စာရင်း</h3>
                 <div class="filter-section">
                     <select class="filter-input" id="serviceStatusFilter" onchange="filterServices()">
                         <option value="all">📋 အားလုံး</option>
@@ -1140,6 +1140,7 @@
                     <select class="filter-input" id="expenseTypeFilter" onchange="filterExpenses()">
                         <option value="all">📋 အားလုံး</option>
                         <option value="ဈေးဖိုး">🛒 ဈေးဖိုး</option>
+                        <option value="စုငွေ">စုငွေ</option>
                         <option value="လျှပ်စစ်မီး">⚡ မီး</option>
                         <option value="ရေ">💧 ရေ</option>
                         <option value="အင်တာနက်">🌐 အင်တာနက်</option>
@@ -1195,7 +1196,7 @@
                     <div class="report-card-value profit" id="reportTotalProfit">0 ကျပ်</div>
                 </div>
                 <div class="report-card">
-                    <div class="report-card-title">ဝန်ဆောင်မှုအမြတ်</div>
+                    <div class="report-card-title">ဖုန်းပြုပြင်မှုအမြတ်</div>
                     <div class="report-card-value profit" id="reportServiceProfit">0 ကျပ်</div>
                 </div>
             </div>
