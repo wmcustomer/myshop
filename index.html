@@ -1281,40 +1281,53 @@
         </div>
     </div>
 
-    <div id="reconcileModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>🔄 စာရင်းကိုက်ရန်</h3>
-                <span class="close" onclick="closeReconcileModal()">&times;</span>
+   <div id="reconcileModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>🔄 စာရင်းကိုက်ရန်</h3>
+            <span class="close" onclick="closeReconcileModal()">&times;</span>
+        </div>
+        <div style="max-height: 70vh; overflow-y: auto; padding: 0 5px;">
+            <!-- အဖွင့်ငွေ -->
+            <div class="form-group" style="background: #f0f9ff; padding: 15px; border-radius: 20px; margin-bottom: 20px; border: 2px solid #bae6fd;">
+                <label style="font-size: 16px; color: #0369a1;">💰 အဖွင့်ငွေ (ပြင်ဆင်ရန်)</label>
+                <input type="number" id="openingBalanceInput" value="0" step="1000" style="font-size: 18px; font-weight: bold; color: #0369a1;">
             </div>
-            <div class="form-group">
-                <label>💰 အဖွင့်ငွေ</label>
-                <input type="number" id="openingBalanceInput" value="0" step="1000">
-            </div>
+            
+            <!-- ဝင်ငွေ/အသုံး -->
             <div class="form-group">
                 <label>📈 ယနေ့ဝင်ငွေ</label>
-                <input type="number" id="todayTotalIncome" readonly style="background: #f1f5f9;">
+                <input type="number" id="todayTotalIncome" readonly style="background: #f1f5f9; font-weight: 600;">
             </div>
             <div class="form-group">
                 <label>📉 ယနေ့အသုံးစရိတ်</label>
-                <input type="number" id="todayTotalExpense" readonly style="background: #f1f5f9;">
+                <input type="number" id="todayTotalExpense" readonly style="background: #f1f5f9; font-weight: 600;">
             </div>
-            <div class="form-group">
-                <label>⚖️ စနစ်တွက်လက်ကျန်</label>
-                <input type="number" id="systemCalculatedBalance" readonly style="background: #f1f5f9;">
+            
+            <!-- စနစ်တွက်လက်ကျန် -->
+            <div class="form-group" style="background: #e0f2fe; padding: 15px; border-radius: 20px; margin-bottom: 20px;">
+                <label style="font-size: 16px; color: #0369a1;">⚖️ စနစ်တွက်လက်ကျန်</label>
+                <input type="number" id="systemCalculatedBalance" readonly style="background: #f1f5f9; font-size: 18px; font-weight: bold; color: #0369a1;">
             </div>
-            <div class="form-group">
-                <label>💵 လက်ရှိငွေ</label>
-                <input type="number" id="actualCash" placeholder="လက်ရှိငွေထည့်ပါ" step="1000">
+            
+            <!-- လက်ရှိငွေ -->
+            <div class="form-group" style="background: #fef3c7; padding: 15px; border-radius: 20px; margin-bottom: 20px;">
+                <label style="font-size: 16px; color: #92400e;">💵 လက်ရှိငွေ (ထည့်ပါ)</label>
+                <input type="number" id="actualCash" placeholder="လက်ရှိငွေထည့်ပါ" step="1000" style="font-size: 18px; font-weight: bold; color: #92400e;">
             </div>
-            <div id="reconcileDifference" style="padding: 15px; border-radius: 20px; margin: 15px 0; text-align: center; font-weight: bold;"></div>
-            <div style="display: flex; gap: 10px;">
-                <button class="btn btn-success" onclick="saveOpeningBalance()" style="flex: 1;">💾 သိမ်း</button>
-                <button class="btn" onclick="calculateDifference()" style="flex: 1;">⚖️ တွက်</button>
-                <button class="btn btn-danger" onclick="closeReconcileModal()" style="flex: 1;">❌ ပိတ်</button>
+            
+            <!-- ကွာခြားချက် -->
+            <div id="reconcileDifference" style="padding: 15px; border-radius: 20px; margin: 15px 0; text-align: center; font-weight: bold; font-size: 16px;"></div>
+            
+            <!-- ခလုတ်များ -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-success" onclick="saveOpeningBalance()" style="flex: 1; min-width: 100px;">💾 သိမ်း</button>
+                <button class="btn" onclick="calculateDifference()" style="flex: 1; min-width: 100px; background: #2563eb;">⚖️ တွက်</button>
+                <button class="btn btn-danger" onclick="closeReconcileModal()" style="flex: 1; min-width: 100px;">❌ ပိတ်</button>
             </div>
         </div>
     </div>
+</div>
 
     <script>
         // Storage Keys
